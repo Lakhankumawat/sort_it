@@ -68,6 +68,15 @@ $ git push -u origin Branch_Name
 
 - Voila! Your Pull Request has been submitted and will be reviewed by the moderators and merged.🥳
 
+## 🌟Productivity Hacks
+1. pubspec dependencies must be sorted alphabetically.
+2. simple one liner names for folders and files until it's not an inbuilt library.
+3. Do not use setstate , first see what is `getx` and ask doubts but never use setstate.
+4. Do not Use MediaQuery for size use plugin `screen util`.
+5. Do not make your custom styles instead add them in constants if exceptional otherwise most probably use heading.
+6. For Designers color styling for app must be derived from some specific constants instead of assigning color itself.
+7. and instead of smashing all of code in one file divide it into components.
+
 ## Need more help?🤔
 You can refer to the following articles on basics of Git and Github and also contact the Project Mentors, in case you are stuck:
 - [Forking a Repo](https://help.github.com/en/github/getting-started-with-github/fork-a-repo)
