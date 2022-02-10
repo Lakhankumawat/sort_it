@@ -5,6 +5,7 @@ import 'package:sort_it/src/screens/profile/profile.dart';
 import 'package:sort_it/src/screens/settings/settings.dart';
 import 'package:sort_it/src/screens/sign_in/sign_in.dart';
 import 'package:sort_it/src/screens/sign_up/sign_up.dart';
+import 'package:sort_it/src/screens/success/success.dart';
 import 'package:sort_it/src/screens/test/test.dart';
 
 final Map<String, WidgetBuilder> routes = {
@@ -14,5 +15,6 @@ final Map<String, WidgetBuilder> routes = {
   Settings.routeName: (context) => Settings(),
   MapPreview.routeName: (context) => MapPreview(),
   Profile.routeName: (context) => Profile(),
+  Success.routeName: (context) => Success(),
   Test.routeName: (context) => Test(),
 };

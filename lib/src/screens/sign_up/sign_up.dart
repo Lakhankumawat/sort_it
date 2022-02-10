@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:sort_it/src/screens/sign_in/components/custom_button.dart';
-import 'package:sort_it/src/screens/sign_in/components/email_field.dart';
-import 'package:sort_it/src/screens/sign_in/components/password_field.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:lottie/lottie.dart';
+import 'package:sort_it/components/custom_button.dart';
+import 'package:sort_it/src/screens/success/success.dart';
+import 'components/prefix.dart';
 
 class SignUp extends StatelessWidget {
   static String routeName = '/sign-up';
@@ -31,70 +33,49 @@ class SignUp extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                width: 50,
-                height: 50,
-                // decoration: BoxDecoration(
-                //   borderRadius: BorderRadius.circular(12),
-                //   boxShadow: [
-                //     BoxShadow(
-                //         color: Color.fromRGBO(15, 218, 136, 0.3),
-                //         offset: Offset(0, 2),
-                //         blurRadius: 4)
-                //   ],
-                //   gradient: LinearGradient(
-                //       begin: Alignment(0, 1),
-                //       end: Alignment(-1, 0),
-                //       colors: [
-                //         Color.fromRGBO(63, 223, 158, 1),
-                //         Color.fromRGBO(62, 213, 152, 1)
-                //       ]),
-                // )
-                child: Image.asset('assets/images/logo.png'),
+              Align(
+                alignment: Alignment.center,
+                child: Container(
+                  width: 0.3.sh,
+                  height: 0.3.sh,
+                  child: Lottie.asset('assets/lottie/otp.json'),
+                ),
               ),
               Text(
-                'Hello',
+                'Sign Up',
                 style: Theme.of(context).textTheme.headline1,
               ),
               Text(
-                'lets introduce',
+                'to start working',
                 style: Theme.of(context).textTheme.headline2,
               ),
-              EmailField(
-                hint: 'Your name',
+              Container(
+                padding: EdgeInsets.all(8.0),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  color: Color(0xFF30444E),
+                ),
+                height: 37.h,
+                child: TextFormField(
+                  style: Theme.of(context).textTheme.headline2,
+                  keyboardType: TextInputType.number,
+                  decoration: InputDecoration(
+                      fillColor: Color(0xFF30444E),
+                      contentPadding: new EdgeInsets.only(top: 9.h),
+                      border: InputBorder.none,
+                      prefixIcon: Prefix(),
+                      hintText: '98',
+                      hintStyle: Theme.of(context).textTheme.headline2),
+                ),
               ),
-              EmailField(
-                hint: 'Your email',
-              ),
-              Row(
-                children: [
-                  Flexible(
-                    flex: 1,
-                    child: CustomButton(
-                      buttonText: '',
-                      textColor: Color.fromRGBO(63, 223, 158, 1),
-                      buttonColor: Color(0xFF286053),
-                      leading: false,
-                      onTap: () {},
-                    ),
-                  ),
-                  SizedBox(
-                    width: 10.w,
-                  ),
-                  Flexible(
-                    flex: 4,
-                    child: CustomButton(
-                      buttonText: 'Next',
-                      textColor: Colors.white,
-                      buttonColor: Color.fromRGBO(63, 223, 158, 1),
-                      leading: true,
-                      onTap: () {},
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                width: 0.4.sh,
+              CustomButton(
+                buttonText: 'Next',
+                textColor: Colors.white,
+                buttonColor: Color.fromRGBO(63, 223, 158, 1),
+                leading: true,
+                onTap: () {
+                  Navigator.of(context).pushNamed(Success.routeName);
+                },
               ),
             ],
           ),

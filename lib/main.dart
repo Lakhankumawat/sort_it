@@ -4,6 +4,7 @@ import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:sort_it/routes/navigation_route.dart';
 import 'package:sort_it/src/screens/home/home.dart';
 import 'package:sort_it/src/screens/sign_in/sign_in.dart';
+import 'package:sort_it/src/screens/sign_up/sign_up.dart';
 import 'constant/constant.dart' as constant;
 
 void main() {
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
             ),
           ),
           routes: routes,
-          initialRoute: SignIn.routeName,
+          initialRoute: SignUp.routeName,
         ),
       ),
     );

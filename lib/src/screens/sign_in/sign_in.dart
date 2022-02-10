@@ -6,7 +6,7 @@ import 'package:lottie/lottie.dart';
 import 'package:sort_it/src/screens/home/home.dart';
 import 'package:sort_it/src/screens/map/map.dart';
 import 'package:sort_it/src/screens/settings/settings.dart';
-import 'package:sort_it/src/screens/sign_in/components/custom_button.dart';
+import 'package:sort_it/components/custom_button.dart';
 import 'package:sort_it/src/screens/sign_in/components/password_field.dart';
 import 'package:sort_it/src/screens/sign_up/sign_up.dart';
 import 'package:sort_it/src/screens/test/test.dart';
