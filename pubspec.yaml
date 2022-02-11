@@ -45,7 +45,6 @@ flutter:
   assets:
     - assets/images/
     - assets/images/splash/
-    - assets/icons/
     - assets/lottie/
 
   fonts:
