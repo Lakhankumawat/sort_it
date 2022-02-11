@@ -1,18 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:lottie/lottie.dart';
 import 'package:sort_it/src/screens/home/home.dart';
-import 'package:sort_it/src/screens/map/map.dart';
-import 'package:sort_it/src/screens/settings/settings.dart';
 import 'package:sort_it/components/custom_button.dart';
-import 'package:sort_it/src/screens/sign_in/components/password_field.dart';
 import 'package:sort_it/src/screens/sign_up/sign_up.dart';
-import 'package:sort_it/src/screens/test/test.dart';
 
 import 'components/bunny.dart';
-import 'components/email_field.dart';
 
 class SignIn extends StatefulWidget {
   static String routeName = '/sign-in';
@@ -21,7 +15,6 @@ class SignIn extends StatefulWidget {
   State<SignIn> createState() => _SignInState();
 }
 
-const Color _primaryColor = Color(0xff2f504b);
 const Color _textColor = Color.fromRGBO(150, 167, 175, 1);
 
 class _SignInState extends State<SignIn> with TickerProviderStateMixin {
@@ -144,10 +137,6 @@ class _SignInState extends State<SignIn> with TickerProviderStateMixin {
                   }
                 },
               ),
-              // EmailField(
-              //   hint: ' Auston@gmail.com',
-              // ),
-              // PasswordField(),
               CustomButton(
                 buttonText: 'Sign In',
                 textColor: Colors.white,

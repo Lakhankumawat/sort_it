@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sort_it/components/custom_button.dart';
-import 'package:sort_it/src/screens/sign_in/components/email_field.dart';
+import 'package:sort_it/src/screens/sign_up/components/email_field.dart';
 
 class UserDetails extends StatelessWidget {
   const UserDetails({Key? key}) : super(key: key);

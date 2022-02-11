@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
             ),
           ),
           routes: routes,
-          initialRoute: SignUp.routeName,
+          initialRoute: Home.routeName,
         ),
       ),
     );
