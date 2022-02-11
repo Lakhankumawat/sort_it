@@ -92,7 +92,7 @@ class SignInController extends GetxController {
             .set({
           'name': username,
           'email': email,
-          'image_url':null,
+          'image_url': null,
         });
 
         Fluttertoast.showToast(msg: 'Welcome $username!');

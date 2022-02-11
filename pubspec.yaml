@@ -17,9 +17,11 @@ dependencies:
   flutter_screenutil: ^5.1.1
   font_awesome_flutter: ^9.2.0
   firebase_auth: ^3.3.6
+  firebase_messaging: ^11.2.6
   firebase_storage: ^10.2.6
   get: ^4.6.1
   lottie: ^1.2.1
+  permission_handler: ^8.3.0
   pretty_dio_logger: ^1.1.1
   sms_autofill: ^2.2.0
 
@@ -42,6 +44,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/
+    - assets/images/splash/
     - assets/icons/
     - assets/lottie/
 
