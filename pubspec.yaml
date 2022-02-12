@@ -23,6 +23,7 @@ dependencies:
   lottie: ^1.2.1
   permission_handler: ^8.3.0
   pretty_dio_logger: ^1.1.1
+  qr_flutter: ^4.0.0
   sms_autofill: ^2.2.0
 
 

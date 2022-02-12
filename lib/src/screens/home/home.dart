@@ -12,6 +12,7 @@ import 'package:sort_it/src/screens/profile/profile.dart';
 import 'package:sort_it/src/screens/settings/settings.dart';
 import 'package:sort_it/src/screens/store/store.dart';
 import 'package:sort_it/src/screens/test/test.dart';
+import '../../../components/app_drawer.dart';
 import 'components/body.dart';
 
 class Home extends StatelessWidget {
@@ -23,13 +24,15 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: controller.scaffoldKey,
+      drawer: AppDrawer(),
       backgroundColor: Color.fromRGBO(31, 46, 53, 1),
       body: Column(
         children: [
           SizedBox(
             height: 15.h,
           ),
-          CustomHeader(),
+          CustomHeader(hc: controller),
           Expanded(
             child: PageView(
               controller: controller.pageController,

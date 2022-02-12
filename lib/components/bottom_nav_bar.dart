@@ -1,13 +1,13 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:sort_it/controller/home_controller.dart';
 
 Container CustomBottomNavbar(BuildContext context, HomeController c) {
   Widget BottomNavbarItem(
       {required String text,
       required IconData icon,
-      required bool isSelected,
       required int currentIndex}) {
     return GestureDetector(
       onTap: () {
@@ -16,7 +16,7 @@ Container CustomBottomNavbar(BuildContext context, HomeController c) {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(50),
-          boxShadow: isSelected
+          boxShadow: c.selectedIndex.value == currentIndex
               ? [
                   BoxShadow(
                     color: Color(0xff3DD598),
@@ -33,14 +33,18 @@ Container CustomBottomNavbar(BuildContext context, HomeController c) {
           children: <Widget>[
             Icon(
               icon,
-              color: isSelected ? Colors.white : Color(0xff9796ae),
+              color: c.selectedIndex.value == currentIndex
+                  ? Colors.white
+                  : Color(0xff9796ae),
               size: 25,
             ),
             SizedBox(height: 4),
             Text(
               text,
               style: TextStyle(
-                  color: isSelected ? Colors.white : Color(0xff9796ae),
+                  color: c.selectedIndex.value == currentIndex
+                      ? Colors.white
+                      : Color(0xff9796ae),
                   fontFamily: 'abzr',
                   fontSize: 11.w,
                   letterSpacing: 0.06,
@@ -65,42 +69,29 @@ Container CustomBottomNavbar(BuildContext context, HomeController c) {
     child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        Container(
-          padding: EdgeInsets.symmetric(horizontal: 16),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              BottomNavbarItem(
-                  icon: Icons.home_rounded,
-                  text: 'Home',
-                  isSelected: c.selectedIndex == 0,
-                  currentIndex: 0),
-              BottomNavbarItem(
-                  icon: Icons.search_rounded,
-                  text: 'Discover',
-                  isSelected: c.selectedIndex == 1,
-                  currentIndex: 1),
-              BottomNavbarItem(
-                  icon: Icons.map,
-                  text: 'Map',
-                  isSelected: c.selectedIndex == 2,
-                  currentIndex: 0),
-              BottomNavbarItem(
-                  icon: Icons.account_circle_rounded,
-                  text: 'Profile',
-                  isSelected: c.selectedIndex == 3,
-                  currentIndex: 2),
-              BottomNavbarItem(
-                  icon: Icons.settings,
-                  text: 'Settings',
-                  isSelected: c.selectedIndex == 4,
-                  currentIndex: 0),
-              BottomNavbarItem(
-                  icon: Icons.ac_unit,
-                  text: 'Coin',
-                  isSelected: c.selectedIndex == 4,
-                  currentIndex: 0),
-            ],
+        Obx(
+          () => Container(
+            padding: EdgeInsets.symmetric(horizontal: 16),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                BottomNavbarItem(
+                    icon: Icons.home_rounded, text: 'Home', currentIndex: 0),
+                BottomNavbarItem(
+                    icon: Icons.search_rounded,
+                    text: 'Discover',
+                    currentIndex: 1),
+                BottomNavbarItem(icon: Icons.map, text: 'Map', currentIndex: 2),
+                BottomNavbarItem(
+                    icon: Icons.account_circle_rounded,
+                    text: 'Profile',
+                    currentIndex: 3),
+                BottomNavbarItem(
+                    icon: Icons.settings, text: 'Settings', currentIndex: 4),
+                BottomNavbarItem(
+                    icon: Icons.ac_unit, text: 'Coin', currentIndex: 5),
+              ],
+            ),
           ),
         ),
         SizedBox(

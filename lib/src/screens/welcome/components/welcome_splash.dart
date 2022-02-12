@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sort_it/model/welcome_model.dart';
 
 class WelcomeSplash extends StatelessWidget {
@@ -20,19 +21,15 @@ class WelcomeSplash extends StatelessWidget {
         ),
         Text(
           welcomePoster.heading,
-          style: TextStyle(
-            color: Color(0xffBCDDB4),
-            fontWeight: FontWeight.bold,
-            fontSize: 32,
-          ),
+          style: Theme.of(context).textTheme.headline1!.copyWith(
+                fontSize: 32.w,
+                color: Color(0xffBCDDB4),
+              ),
         ),
         const SizedBox(height: 10),
         Text(
           welcomePoster.caption,
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 18,
-          ),
+          style: Theme.of(context).textTheme.headline2,
           textAlign: TextAlign.center,
         ),
         const SizedBox(height: 30),

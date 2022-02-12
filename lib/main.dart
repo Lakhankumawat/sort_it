@@ -5,6 +5,7 @@ import 'package:sort_it/routes/navigation_route.dart';
 import 'package:sort_it/src/screens/home/home.dart';
 import 'package:sort_it/src/screens/sign_in/sign_in.dart';
 import 'package:sort_it/src/screens/sign_up/sign_up.dart';
+import 'package:sort_it/src/screens/welcome/welcome.dart';
 import 'constant/constant.dart' as constant;
 
 void main() {

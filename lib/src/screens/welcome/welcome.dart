@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:sort_it/components/welcome_splash.dart';
+import 'package:sort_it/src/screens/welcome/components/welcome_splash.dart';
 import 'package:sort_it/controller/welcome_controller.dart';
 import 'package:sort_it/src/screens/home/home.dart';
 
