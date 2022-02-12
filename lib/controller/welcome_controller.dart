@@ -1,8 +1,12 @@
 import 'package:get/get.dart';
-
+import 'package:flutter/material.dart';
 import 'package:sort_it/model/welcome_model.dart';
+import 'package:sort_it/src/screens/sign_up/sign_up.dart';
 
 class WelcomeController extends GetxController {
+  ///-----------Page Controller PC ------------------///
+  PageController pc = PageController();
+
   List<WelcomePoster> posters = [
     WelcomePoster(
         image: 'assets/images/splash/1 (5).png',
@@ -44,5 +48,22 @@ class WelcomeController extends GetxController {
   void updateIndex(int val) {
     selectedIndex = val;
     update();
+  }
+
+  void skipPage() {
+    Get.offAllNamed(SignUp.routeName);
+  }
+
+  void animateSlider(int nextPage, BuildContext context) {
+    Future.delayed(Duration(seconds: 1)).then((_) {
+      if (nextPage == posters.length) {
+        skipPage();
+      }
+      if (pc.hasClients)
+        pc
+            .animateToPage(nextPage,
+                duration: Duration(milliseconds: 800), curve: Curves.easeOut)
+            .then((_) => animateSlider(nextPage + 1, context));
+    });
   }
 }

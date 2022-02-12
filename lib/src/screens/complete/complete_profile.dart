@@ -1,20 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
-import 'package:sort_it/src/screens/home/home.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class Success extends StatelessWidget {
-  static String routeName = '/success';
-  const Success({Key? key}) : super(key: key);
-
-  void doSomeOperationPush(BuildContext context) {
-    Future.delayed(Duration(seconds: 2), () {
-      Navigator.of(context).pushNamed(Home.routeName);
-    });
-  }
+class CompleteProfile extends StatelessWidget {
+  static String routeName = '/complete-profile';
+  CompleteProfile({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    doSomeOperationPush(context);
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Container(
@@ -29,7 +21,17 @@ class Success extends StatelessWidget {
                 Color.fromRGBO(31, 46, 53, 1)
               ]),
         ),
-        child: Center(child: Lottie.asset('assets/lottie/success.json')),
+        child: Padding(
+          padding: EdgeInsets.symmetric(
+            horizontal: 0.1.sw,
+            vertical: 0.1.sh,
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [],
+          ),
+        ),
       ),
     );
   }

@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:lottie/lottie.dart';
 import 'package:sort_it/components/custom_button.dart';
+import 'package:sort_it/controller/sign_up_controller.dart';
+import 'package:sort_it/src/screens/sign_up/components/otp.dart';
 import 'package:sort_it/src/screens/success/success.dart';
 import 'components/prefix.dart';
 
 class SignUp extends StatelessWidget {
   static String routeName = '/sign-up';
+
+  final SignUpController sc = Get.put(SignUpController());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,7 +80,7 @@ class SignUp extends StatelessWidget {
                 buttonColor: Color.fromRGBO(63, 223, 158, 1),
                 leading: true,
                 onTap: () {
-                  Navigator.of(context).pushNamed(Success.routeName);
+                  Navigator.of(context).pushNamed(Otp.routeName);
                 },
               ),
             ],

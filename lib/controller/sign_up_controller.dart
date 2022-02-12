@@ -24,9 +24,9 @@ class SignUpController extends GetxController {
   MobileVerificationState currentState =
       MobileVerificationState.SHOW_MOBILE_FORM_STATE;
 
-  init() async {
-    SmsAutoFill().listenForCode;
-  }
+  // init() async {
+  //   SmsAutoFill().listenForCode;
+  // }
 
   void setLoader({required bool newval}) {
     isLoadingForOtp.value = newval;
@@ -93,104 +93,6 @@ class SignUpController extends GetxController {
       codeAutoRetrievalTimeout: (codeAutoRetrievalTimeout) {
         print("-----code retrieval--------");
       },
-    );
-  }
-
-  OtpFillWidget(context) {
-    return Container(
-      padding: EdgeInsets.symmetric(
-        horizontal: 30.w,
-        vertical: 200.h,
-      ),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-      ),
-      child: Form(
-          child: Column(
-        children: [
-          Text(
-            "OTP Verification",
-            textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.headline1,
-          ),
-          Text.rich(
-            TextSpan(text: 'We have sent code at \n', children: [
-              TextSpan(
-                  text: '+91${phoneController.text}',
-                  style: const TextStyle(
-                      fontWeight: FontWeight.w700, color: Colors.black87)),
-              const TextSpan(text: '\n please verify'),
-            ]),
-            textAlign: TextAlign.center,
-          ),
-          buildTimer(),
-          SizedBox(
-            height: 10.h,
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: PinFieldAutoFill(
-              controller: otpController,
-              decoration: UnderlineDecoration(
-                textStyle: const TextStyle(fontSize: 20, color: Colors.black),
-                colorBuilder: FixedColorBuilder(Colors.black.withOpacity(0.3)),
-              ),
-              currentCode: otpController.text,
-              onCodeSubmitted: (code) {},
-              onCodeChanged: (code) {
-                if (code!.length == 6) {
-                  FocusScope.of(context).unfocus();
-
-                  otpController.text = code;
-                  isLoading.value = true;
-
-                  PhoneAuthCredential phoneAuthCredential =
-                      PhoneAuthProvider.credential(
-                          verificationId: verificationId.value,
-                          smsCode: otpController.text);
-                  signInWithPhoneAuthCredential(phoneAuthCredential, context);
-                  //FocusScope.of(context).requestFocus(FocusNode());
-                }
-              },
-            ),
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          !isLoading.value
-              ? ElevatedButton(
-                  onPressed: () async {
-                    PhoneAuthCredential phoneAuthCredential =
-                        PhoneAuthProvider.credential(
-                            verificationId: verificationId.value,
-                            smsCode: otpController.text);
-                    signInWithPhoneAuthCredential(phoneAuthCredential, context);
-                  },
-                  child: const Text('Verify'),
-                )
-              : const Center(
-                  child: CircularProgressIndicator(),
-                ),
-        ],
-      )),
-    );
-  }
-
-  Row buildTimer() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        //Text("This code will expired in "),
-        TweenAnimationBuilder(
-          tween: Tween(begin: 45.0, end: 0.0),
-          duration: const Duration(seconds: 45),
-          builder: (_, dynamic value, child) => Text(
-            "00:${value.toInt()}",
-            style: TextStyle(color: Colors.blue),
-          ),
-          onEnd: () {},
-        ),
-      ],
     );
   }
 

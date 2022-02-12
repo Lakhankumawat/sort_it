@@ -6,8 +6,9 @@ import 'package:lottie/lottie.dart';
 import 'package:sort_it/components/custom_button.dart';
 import 'package:sort_it/controller/permission_controller.dart';
 
-class Permission extends StatelessWidget {
-  Permission({Key? key}) : super(key: key);
+class PermissionsPage extends StatelessWidget {
+  static String routeName = '/permissions';
+  PermissionsPage({Key? key}) : super(key: key);
 
   final PermissionController pc = Get.find();
 

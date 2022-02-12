@@ -1,19 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:sort_it/src/screens/sign_up/sign_up.dart';
 import 'package:sort_it/src/screens/welcome/components/welcome_splash.dart';
 import 'package:sort_it/controller/welcome_controller.dart';
-import 'package:sort_it/src/screens/home/home.dart';
 
-class Welcome extends StatelessWidget {
+class Welcome extends StatefulWidget {
   Welcome({Key? key}) : super(key: key);
   static const routeName = '/welcome-screen';
 
-  WelcomeController _welcomeController = Get.put(WelcomeController());
-  PageController _pageController = PageController();
+  @override
+  State<Welcome> createState() => _WelcomeState();
+}
 
-  void skipPage() {
-    Get.offAllNamed(Home.routeName);
+class _WelcomeState extends State<Welcome> {
+  WelcomeController _welcomeController = Get.put(WelcomeController());
+
+  @override
+  void initState() {
+    _welcomeController.animateSlider(0, context);
+    super.initState();
   }
 
   @override
@@ -28,7 +34,7 @@ class Welcome extends StatelessWidget {
           children: [
             Expanded(
               child: PageView.builder(
-                controller: _pageController,
+                controller: _welcomeController.pc,
                 onPageChanged: (index) {
                   _welcomeController.updateIndex(index);
                 },
@@ -66,7 +72,7 @@ class Welcome extends StatelessWidget {
             ),
             SizedBox(height: 10.h),
             TextButton(
-              onPressed: skipPage,
+              onPressed: _welcomeController.skipPage,
               child: Text(
                 'Skip',
                 style: TextStyle(
