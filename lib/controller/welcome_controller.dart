@@ -54,16 +54,24 @@ class WelcomeController extends GetxController {
     Get.offAllNamed(SignUp.routeName);
   }
 
-  void animateSlider(int nextPage, BuildContext context) {
-    Future.delayed(Duration(seconds: 1)).then((_) {
-      if (nextPage == posters.length) {
-        skipPage();
-      }
-      if (pc.hasClients)
-        pc
-            .animateToPage(nextPage,
-                duration: Duration(milliseconds: 800), curve: Curves.easeOut)
-            .then((_) => animateSlider(nextPage + 1, context));
-    });
-  }
+  ///----------------Code For auto animation from the start of the screen-----------------///
+ ///---------------------May not be useful in some cases , so in hold -------------------///
+  // @override
+  // void initState() {
+  //   _welcomeController.animateSlider(0, context);
+  //   super.initState();
+  // }
+  //
+  // void animateSlider(int nextPage, BuildContext context) {
+  //   Future.delayed(Duration(seconds: 1)).then((_) {
+  //     if (nextPage == posters.length) {
+  //       skipPage();
+  //     }
+  //     if (pc.hasClients)
+  //       pc
+  //           .animateToPage(nextPage,
+  //               duration: Duration(milliseconds: 800), curve: Curves.easeOut)
+  //           .then((_) => animateSlider(nextPage + 1, context));
+  //   });
+  // }
 }

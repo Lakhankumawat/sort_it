@@ -20,11 +20,11 @@ final Map<String, WidgetBuilder> routes = {
   /// --------------|-----------
   /// | End Screen Test Screen |
   Welcome.routeName: (context) => Welcome(),
-  Otp.routeName: (context) => Otp(),
   SignIn.routeName: (context) => SignIn(),
   SignUp.routeName: (context) => SignUp(),
+  Otp.routeName: (context) => Otp(),
   PermissionsPage.routeName: (context) => PermissionsPage(),
-  CompleteProfile.routeName:(context)=>CompleteProfile(),
+  CompleteProfile.routeName: (context) => CompleteProfile(),
   Success.routeName: (context) => Success(),
   Home.routeName: (context) => Home(),
   Settings.routeName: (context) => Settings(),

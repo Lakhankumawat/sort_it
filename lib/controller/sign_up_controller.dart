@@ -20,6 +20,7 @@ class SignUpController extends GetxController {
   RxString password = ''.obs;
   final phoneController = TextEditingController();
   final otpController = TextEditingController();
+  RxBool isObscure = true.obs;
 
   MobileVerificationState currentState =
       MobileVerificationState.SHOW_MOBILE_FORM_STATE;
@@ -30,6 +31,10 @@ class SignUpController extends GetxController {
 
   void setLoader({required bool newval}) {
     isLoadingForOtp.value = newval;
+  }
+
+  void changeObscure() {
+    isObscure.value = !isObscure.value;
   }
 
   String? validatePassword(String value) {

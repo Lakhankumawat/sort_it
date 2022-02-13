@@ -5,12 +5,13 @@ import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:lottie/lottie.dart';
 import 'package:sort_it/components/custom_button.dart';
 import 'package:sort_it/controller/permission_controller.dart';
+import 'package:sort_it/src/screens/complete/complete_profile.dart';
 
 class PermissionsPage extends StatelessWidget {
   static String routeName = '/permissions';
   PermissionsPage({Key? key}) : super(key: key);
 
-  final PermissionController pc = Get.find();
+  final PermissionController pc = Get.put(PermissionController());
 
   @override
   Widget build(BuildContext context) {
@@ -44,10 +45,10 @@ class PermissionsPage extends StatelessWidget {
               Container(
                 width: 0.3.sh,
                 height: 0.3.sh,
-                child: Lottie.asset('assets/lottie/otp.json'),
+                child: Lottie.asset('assets/lottie/location.json'),
               ),
               Text(
-                'We need to know your location in order\n to suggest nearby stations',
+                'We need to know your location in order to suggest nearby stations',
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.headline2,
               ),
@@ -57,7 +58,8 @@ class PermissionsPage extends StatelessWidget {
                 buttonColor: Color.fromRGBO(63, 223, 158, 1),
                 leading: true,
                 onTap: () {
-                  pc.getPermission(context);
+                  //pc.getPermission(context);
+                  Navigator.of(context).pushNamed(CompleteProfile.routeName);
                 },
               ),
             ],

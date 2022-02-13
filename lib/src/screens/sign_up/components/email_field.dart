@@ -15,14 +15,14 @@ class EmailField extends StatelessWidget {
       ),
       height: 60.0,
       child: TextFormField(
-        style: Theme.of(context).textTheme.headline3,
+        style: Theme.of(context).textTheme.headline2,
         decoration: InputDecoration(
             fillColor: Color(0xFF30444E),
             contentPadding: new EdgeInsets.symmetric(vertical: 12),
             border: InputBorder.none,
             prefixIcon: Prefix(),
             hintText: hint,
-            hintStyle: Theme.of(context).textTheme.headline3),
+            hintStyle: Theme.of(context).textTheme.headline2),
       ),
     );
   }
