@@ -22,6 +22,14 @@
           }
         },
         {
+          "client_id": "239407209167-hc9t6dh3c5panmsol15f1lodsj7cerpg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.freeguy.sort_it",
+            "certificate_hash": "13e191186aa1cdfcdea04395f650aaeedca85d68"
+          }
+        },
+        {
           "client_id": "239407209167-rgr5e95mqvgfb29b3i2339su0f5vgvkf.apps.googleusercontent.com",
           "client_type": 3
         }

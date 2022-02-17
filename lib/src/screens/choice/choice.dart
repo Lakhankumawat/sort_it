@@ -1,18 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_instance/src/extension_instance.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:lottie/lottie.dart';
 import 'package:sort_it/components/custom_button.dart';
-import 'package:sort_it/controller/permission_controller.dart';
-import 'package:sort_it/src/screens/choice/choice.dart';
 import 'package:sort_it/src/screens/complete/complete_profile.dart';
 
-class PermissionsPage extends StatelessWidget {
-  static String routeName = '/permissions';
-  PermissionsPage({Key? key}) : super(key: key);
-
-  final PermissionController pc = Get.put(PermissionController());
+class Choice extends StatelessWidget {
+  static String routeName = '/choice';
+  const Choice({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -40,27 +36,37 @@ class PermissionsPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                'Enable Location',
+                'I am here to',
                 style: Theme.of(context).textTheme.headline1,
               ),
               Container(
                 width: 0.3.sh,
                 height: 0.3.sh,
-                child: Lottie.asset('assets/lottie/location.json'),
+                child: Lottie.asset('assets/lottie/garbage.json'),
               ),
               Text(
-                'We need to know your location in order to suggest nearby stations',
+                'Please mention your use type',
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.headline2,
               ),
               CustomButton(
-                buttonText: 'Enable',
+                buttonText: 'Dump garbage',
                 textColor: Colors.white,
                 buttonColor: Color.fromRGBO(63, 223, 158, 1),
                 leading: true,
                 onTap: () {
-                  //pc.getPermission(context);
-                  Navigator.of(context).pushNamed(Choice.routeName);
+                  ///Setting the type for further details of user in user db
+                  Get.toNamed(CompleteProfile.routeName);
+                },
+              ),
+              CustomButton(
+                buttonText: 'Collect Garbage',
+                textColor: Color.fromRGBO(63, 223, 158, 1),
+                buttonColor: Color(0xFF286053),
+                leading: false,
+                onTap: () {
+                  ///Setting the type for further details of collector in db
+                  Get.toNamed(CompleteProfile.routeName);
                 },
               ),
             ],

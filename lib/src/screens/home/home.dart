@@ -24,7 +24,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: controller.scaffoldKey,
+      // key: controller.scaffoldKey,
       drawer: AppDrawer(),
       backgroundColor: Color.fromRGBO(31, 46, 53, 1),
       body: Column(

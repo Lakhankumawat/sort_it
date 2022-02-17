@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:sort_it/src/screens/choice/choice.dart';
 import 'package:sort_it/src/screens/complete/complete_profile.dart';
 import 'package:sort_it/src/screens/home/home.dart';
 import 'package:sort_it/src/screens/map/map.dart';
@@ -24,6 +25,7 @@ final Map<String, WidgetBuilder> routes = {
   SignUp.routeName: (context) => SignUp(),
   Otp.routeName: (context) => Otp(),
   PermissionsPage.routeName: (context) => PermissionsPage(),
+  Choice.routeName: (context) => Choice(),
   CompleteProfile.routeName: (context) => CompleteProfile(),
   Success.routeName: (context) => Success(),
   Home.routeName: (context) => Home(),

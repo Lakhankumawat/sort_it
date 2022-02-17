@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
             ),
           ),
           routes: routes,
-          initialRoute: Welcome.routeName,
+          initialRoute: Home.routeName,
         ),
       ),
     );

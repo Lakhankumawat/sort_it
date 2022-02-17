@@ -6,10 +6,9 @@ import 'package:sort_it/src/screens/welcome/components/welcome_splash.dart';
 import 'package:sort_it/controller/welcome_controller.dart';
 
 class Welcome extends StatelessWidget {
-  static String routeName='/welcome';
-   Welcome({Key? key}) : super(key: key);
+  static String routeName = '/welcome';
+  Welcome({Key? key}) : super(key: key);
   WelcomeController _welcomeController = Get.put(WelcomeController());
-
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +45,7 @@ class Welcome extends StatelessWidget {
                         duration: Duration(milliseconds: 350),
                         height: 10,
                         width:
-                        poster.index == controller.selectedIndex ? 20 : 10,
+                            poster.index == controller.selectedIndex ? 20 : 10,
                         decoration: BoxDecoration(
                           color: poster.index == controller.selectedIndex
                               ? Color(0xff66C34F)
@@ -78,5 +77,3 @@ class Welcome extends StatelessWidget {
     );
   }
 }
-
-

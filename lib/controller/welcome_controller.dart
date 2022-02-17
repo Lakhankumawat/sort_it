@@ -55,7 +55,7 @@ class WelcomeController extends GetxController {
   }
 
   ///----------------Code For auto animation from the start of the screen-----------------///
- ///---------------------May not be useful in some cases , so in hold -------------------///
+  ///---------------------May not be useful in some cases , so in hold -------------------///
   // @override
   // void initState() {
   //   _welcomeController.animateSlider(0, context);
