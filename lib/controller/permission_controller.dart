@@ -11,7 +11,7 @@ class PermissionController extends GetxController {
       Permission.location,
       // Permission.phone,
       // Permission.sms,
-      // Permission.camera,
+      Permission.camera,
     ].request();
     if (await Permission.location.request().isGranted) {
       print('location granted');

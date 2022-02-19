@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class EmailField extends StatelessWidget {
+class NameField extends StatelessWidget {
+  final TextEditingController tec;
   final String hint;
-  const EmailField({Key? key, required this.hint}) : super(key: key);
+  const NameField({Key? key, required this.hint, required this.tec})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,6 +17,7 @@ class EmailField extends StatelessWidget {
       ),
       height: 60.0,
       child: TextFormField(
+        controller: tec,
         style: Theme.of(context).textTheme.headline2,
         decoration: InputDecoration(
             fillColor: Color(0xFF30444E),

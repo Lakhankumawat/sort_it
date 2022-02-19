@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:sort_it/components/custom_button.dart';
-import 'package:sort_it/src/screens/sign_up/components/email_field.dart';
+import 'package:sort_it/components/email_field.dart';
+import 'package:sort_it/components/name_field.dart';
+import 'package:sort_it/controller/complete_controller.dart';
 
 class UserDetails extends StatelessWidget {
-  const UserDetails({Key? key}) : super(key: key);
+  UserDetails({Key? key}) : super(key: key);
+
+  final CompleteProfileController cp = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -25,14 +31,16 @@ class UserDetails extends StatelessWidget {
         SizedBox(
           height: 20.h,
         ),
-        EmailField(
+        NameField(
           hint: 'Your name',
+          tec: cp.nameController,
         ),
         SizedBox(
           height: 10.h,
         ),
         EmailField(
           hint: 'Your email',
+          controller: cp.emailController,
         ),
       ],
     );

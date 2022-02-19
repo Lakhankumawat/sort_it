@@ -59,7 +59,7 @@ class PermissionsPage extends StatelessWidget {
                 buttonColor: Color.fromRGBO(63, 223, 158, 1),
                 leading: true,
                 onTap: () {
-                  //pc.getPermission(context);
+                  pc.getPermission(context);
                   Navigator.of(context).pushNamed(Choice.routeName);
                 },
               ),

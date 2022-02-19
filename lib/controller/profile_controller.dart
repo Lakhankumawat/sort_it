@@ -24,9 +24,9 @@ class ProfileController extends GetxController {
       compact: false,
     ));
     try {
-      QueryDocumentSnapshot<Map<String, dynamic>> data =
-          (await db.collection('users').get()).docs.first;
-      print(jsonEncode(data.data()));
+      // QueryDocumentSnapshot<Map<String, dynamic>> data =
+      //     (await db.collection('users').get()).docs.first;
+      // print(jsonEncode(data.data()));
     } catch (e) {
       print(e);
     }

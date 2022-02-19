@@ -4,10 +4,10 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:lottie/lottie.dart';
 import 'package:sort_it/components/custom_button.dart';
+import 'package:sort_it/components/phone_field.dart';
 import 'package:sort_it/controller/sign_up_controller.dart';
 import 'package:sort_it/src/screens/sign_up/components/otp.dart';
 import 'package:sort_it/src/screens/success/success.dart';
-import 'components/prefix.dart';
 
 class SignUp extends StatelessWidget {
   static String routeName = '/sign-up';
@@ -55,25 +55,7 @@ class SignUp extends StatelessWidget {
                 'to start working',
                 style: Theme.of(context).textTheme.headline2,
               ),
-              Container(
-                padding: EdgeInsets.all(8.0),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  color: Color(0xFF30444E),
-                ),
-                height: 37.h,
-                child: TextFormField(
-                  style: Theme.of(context).textTheme.headline2,
-                  keyboardType: TextInputType.number,
-                  decoration: InputDecoration(
-                      fillColor: Color(0xFF30444E),
-                      contentPadding: new EdgeInsets.only(top: 9.h),
-                      border: InputBorder.none,
-                      prefixIcon: Prefix(),
-                      hintText: '98',
-                      hintStyle: Theme.of(context).textTheme.headline2),
-                ),
-              ),
+              PhoneField(hint: '98', controller: sc.phoneController),
               CustomButton(
                 buttonText: 'Next',
                 textColor: Colors.white,

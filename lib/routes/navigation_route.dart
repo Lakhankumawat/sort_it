@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:sort_it/src/screens/choice/choice.dart';
 import 'package:sort_it/src/screens/complete/complete_profile.dart';
+import 'package:sort_it/src/screens/editprofile/editprofile.dart';
 import 'package:sort_it/src/screens/home/home.dart';
 import 'package:sort_it/src/screens/map/map.dart';
 import 'package:sort_it/src/screens/permission/permission.dart';
 import 'package:sort_it/src/screens/profile/profile.dart';
+import 'package:sort_it/src/screens/scan/scan.dart';
 import 'package:sort_it/src/screens/settings/settings.dart';
 import 'package:sort_it/src/screens/sign_in/sign_in.dart';
 import 'package:sort_it/src/screens/sign_up/components/otp.dart';
@@ -30,7 +32,9 @@ final Map<String, WidgetBuilder> routes = {
   Success.routeName: (context) => Success(),
   Home.routeName: (context) => Home(),
   Settings.routeName: (context) => Settings(),
+  Scan.routeName: (context) => Scan(),
   MapPreview.routeName: (context) => MapPreview(),
   Profile.routeName: (context) => Profile(),
+  EditProfile.routeName: (context) => EditProfile(),
   Test.routeName: (context) => Test(),
 };

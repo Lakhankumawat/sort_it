@@ -54,11 +54,12 @@ class CustomButton extends StatelessWidget {
                       .headline3!
                       .copyWith(color: textColor, fontSize: 20.w),
                 ),
-                leading != null
+                SizedBox(
+                  width: 5.h,
+                ),
+                leading == true
                     ? Icon(
-                        leading == true
-                            ? FontAwesomeIcons.arrowRight
-                            : FontAwesomeIcons.arrowLeft,
+                        FontAwesomeIcons.arrowRight,
                         color: textColor,
                         size: 17,
                       )

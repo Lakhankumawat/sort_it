@@ -4,6 +4,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:sort_it/controller/profile_controller.dart';
+import 'package:sort_it/src/screens/editprofile/editprofile.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
 
 class Profile extends StatelessWidget {
   static String routeName = '/profile';
@@ -94,26 +96,31 @@ class Profile extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Container(
-                    width: 50.w,
-                    height: 25.h,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(32.5),
-                      // boxShadow: [
-                      //   BoxShadow(
-                      //       color: Color.fromRGBO(235, 235, 253, 1),
-                      //       offset: Offset(0, 1),
-                      //       blurRadius: 14)
-                      // ],
-                      color: Color.fromRGBO(62, 213, 152, 1),
-                      border: Border.all(
-                        color: Color.fromRGBO(183, 237, 218, 1),
-                        width: 1,
+                  InkWell(
+                    onTap: () {
+                      Get.toNamed(EditProfile.routeName);
+                    },
+                    child: Container(
+                      width: 50.w,
+                      height: 25.h,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(32.5),
+                        boxShadow: [
+                          BoxShadow(
+                              color: Color.fromRGBO(235, 235, 253, 1),
+                              offset: Offset(0, 1),
+                              blurRadius: 14)
+                        ],
+                        color: Color.fromRGBO(62, 213, 152, 1),
+                        border: Border.all(
+                          color: Color.fromRGBO(183, 237, 218, 1),
+                          width: 1,
+                        ),
                       ),
-                    ),
-                    child: Icon(
-                      FontAwesomeIcons.pen,
-                      color: Colors.white,
+                      child: Icon(
+                        FontAwesomeIcons.pen,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ],

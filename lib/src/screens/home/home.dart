@@ -9,6 +9,7 @@ import 'package:sort_it/controller/home_controller.dart';
 import 'package:sort_it/src/screens/coins/coins.dart';
 import 'package:sort_it/src/screens/map/map.dart';
 import 'package:sort_it/src/screens/profile/profile.dart';
+import 'package:sort_it/src/screens/scan/scan.dart';
 import 'package:sort_it/src/screens/settings/settings.dart';
 import 'package:sort_it/src/screens/store/store.dart';
 import 'package:sort_it/src/screens/test/test.dart';
@@ -39,7 +40,7 @@ class Home extends StatelessWidget {
               children: <Widget>[
                 Body(),
                 Store(),
-                MapPreview(),
+                Test(),
                 Profile(),
                 Settings(),
                 Coins(),

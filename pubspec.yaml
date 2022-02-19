@@ -21,9 +21,11 @@ dependencies:
   firebase_messaging: ^11.2.6
   firebase_storage: ^10.2.6
   get: ^4.6.1
+  image_picker: ^0.8.4+9
   lottie: ^1.2.1
   permission_handler: ^8.3.0
   pretty_dio_logger: ^1.1.1
+  qr_code_scanner: ^0.6.1
   qr_flutter: ^4.0.0
   sms_autofill: ^2.2.0
 
@@ -48,6 +50,7 @@ flutter:
     - assets/images/
     - assets/images/splash/
     - assets/lottie/
+    - assets/icons/
 
   fonts:
     - family: "abzi" #ABeeZee-Italic

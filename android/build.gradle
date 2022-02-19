@@ -1,12 +1,14 @@
 buildscript {
-    ext.kotlin_version = '1.3.50'
+    ///Changed from ext.kotlin_version = '1.3.50' to ext.kotlin_version = '1.5.10'
+    // for more see qr_scanner plugin documentation
+    ext.kotlin_version = '1.5.10'
     repositories {
         google()
         mavenCentral()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.1.0'
+        classpath 'com.android.tools.build:gradle:4.2.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath 'com.google.gms:google-services:4.3.10'
     }
