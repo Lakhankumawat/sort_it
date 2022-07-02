@@ -23,6 +23,7 @@ class MyApp extends StatelessWidget {
       child: ScreenUtilInit(
         designSize: Size(500, 500),
         minTextAdapt: true,
+        
         splitScreenMode: true,
         builder: () => GetMaterialApp(
           debugShowCheckedModeBanner: false,
