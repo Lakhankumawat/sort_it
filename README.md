@@ -1,6 +1,6 @@
 # Sort It
 
-![](./preview/Screenshot_5.jpg)
+![](./preview/logo.png)
 
 This project is an exercise project for individuals to learn Flutter.
 
